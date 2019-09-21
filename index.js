@@ -6,10 +6,11 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 const port = 3000;
-const APIKEY = 'fe9aa5d258e61ff822869d8bd5ebcb09';
+const APIKEY = process.env.FIXER_API_KEY || 'fe9aa5d258e61ff822869d8bd5ebcb09';
+// console.log(APIKEY)
 
 const upload = multer({ dest: 'public/' })
-app.get('/', upload.single('input.csv'), (req, res) => {
+app.post('/', upload.single('input.csv'), (req, res) => {
   let currencyCodes = []
   fs.createReadStream('public/input.csv').pipe(csv()).on('data', (row) => {
     currencyCodes.push(row)
