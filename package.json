@@ -1,0 +1,22 @@
+{
+  "name": "currencyapi",
+  "version": "1.0.0",
+  "description": "fetch currency api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "currency",
+    "fixer"
+  ],
+  "author": "surya prakash",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^2.3.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "node-fetch": "^2.6.0",
+    "papaparse": "^5.1.0"
+  }
+}
